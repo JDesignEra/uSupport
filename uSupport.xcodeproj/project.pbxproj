@@ -35,12 +35,10 @@
 		5D2EE7F61E4F6C1F00ABB39C /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2EE7D91E4F6C1F00ABB39C /* UnwindSegue.swift */; };
 		5D302F2D1E5F41EC0083C001 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D302F2C1E5F41EC0083C001 /* QuartzCore.framework */; };
 		5D40F6971E5B0B35005F7B1B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40F6961E5B0B35005F7B1B /* DBManager.m */; };
-		5D40F6991E5B17A3005F7B1B /* uSupport.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5D40F6981E5B17A3005F7B1B /* uSupport.sqlite */; };
 		5D40F69A1E5B1D29005F7B1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1D062E1E597E9400AEBA37 /* libsqlite3.tbd */; };
 		5D40F69D1E5B246B005F7B1B /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40F69C1E5B246B005F7B1B /* CustomAnnotation.m */; };
 		5D66D9DD1E52A4CF0004EF67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D66D9DC1E52A4CF0004EF67 /* CoreLocation.framework */; };
 		5D66D9DE1E52A4F80004EF67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D66D9DA1E52A3420004EF67 /* MapKit.framework */; };
-		5DB641571E4F950500369278 /* uSupport_LocationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB641561E4F950500369278 /* uSupport_LocationSegue.m */; };
 		5DB6415A1E4F969600369278 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB641591E4F969600369278 /* UIKit.framework */; };
 		5DEA91E61E5B033C00697BB7 /* uSupport.db in Resources */ = {isa = PBXBuildFile; fileRef = 5DEA91E51E5B033C00697BB7 /* uSupport.db */; };
 /* End PBXBuildFile section */
@@ -83,13 +81,10 @@
 		5D302F2C1E5F41EC0083C001 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D40F6951E5B0B35005F7B1B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		5D40F6961E5B0B35005F7B1B /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		5D40F6981E5B17A3005F7B1B /* uSupport.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = uSupport.sqlite; sourceTree = "<group>"; };
 		5D40F69B1E5B246B005F7B1B /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		5D40F69C1E5B246B005F7B1B /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		5D66D9DA1E52A3420004EF67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5D66D9DC1E52A4CF0004EF67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		5DB641551E4F950500369278 /* uSupport_LocationSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uSupport_LocationSegue.h; sourceTree = "<group>"; };
-		5DB641561E4F950500369278 /* uSupport_LocationSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uSupport_LocationSegue.m; sourceTree = "<group>"; };
 		5DB641591E4F969600369278 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DEA91E51E5B033C00697BB7 /* uSupport.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = uSupport.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,8 +148,6 @@
 				5D1D062C1E59538F00AEBA37 /* AnimateObjects.m */,
 				5D40F69B1E5B246B005F7B1B /* CustomAnnotation.h */,
 				5D40F69C1E5B246B005F7B1B /* CustomAnnotation.m */,
-				5DB641551E4F950500369278 /* uSupport_LocationSegue.h */,
-				5DB641561E4F950500369278 /* uSupport_LocationSegue.m */,
 				5D14BAF21E4F545700EFE7F1 /* main.m */,
 				5D2EE7BB1E4F6C1F00ABB39C /* Spring */,
 			);
@@ -190,7 +183,6 @@
 		5D40DC4F1E5A8A7D0043FD25 /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
-				5D40F6981E5B17A3005F7B1B /* uSupport.sqlite */,
 				5DEA91E51E5B033C00697BB7 /* uSupport.db */,
 				5D40F6951E5B0B35005F7B1B /* DBManager.h */,
 				5D40F6961E5B0B35005F7B1B /* DBManager.m */,
@@ -274,7 +266,6 @@
 				5D14BB011E4F545700EFE7F1 /* Assets.xcassets in Resources */,
 				5D14BAFC1E4F545700EFE7F1 /* Main.storyboard in Resources */,
 				5DEA91E61E5B033C00697BB7 /* uSupport.db in Resources */,
-				5D40F6991E5B17A3005F7B1B /* uSupport.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +291,6 @@
 				5D40F69D1E5B246B005F7B1B /* CustomAnnotation.m in Sources */,
 				5D2EE7F51E4F6C1F00ABB39C /* TransitionZoom.swift in Sources */,
 				5D2EE7DD1E4F6C1F00ABB39C /* BlurView.swift in Sources */,
-				5DB641571E4F950500369278 /* uSupport_LocationSegue.m in Sources */,
 				5D2EE7E51E4F6C1F00ABB39C /* ImageLoader.swift in Sources */,
 				5D2EE7F31E4F6C1F00ABB39C /* SpringView.swift in Sources */,
 				5D09C8061E4F850C00B2EC90 /* LocationView.m in Sources */,

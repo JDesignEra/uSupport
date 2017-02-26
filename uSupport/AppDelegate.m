@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //[self createNewEkitType:@"aed" Latitude:1.377805 Longtitude:103.856222];
     
     return YES;
 }

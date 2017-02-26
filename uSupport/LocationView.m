@@ -403,9 +403,6 @@
                 _lblTotalDist.text = [NSString stringWithFormat:@"%.0fM", route.distance];
             
                 NSArray *steps = [route steps];
-                
-                //NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-            
                 [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                     if (idx == 1 || idx == 0) {
                         _lblDist.text = [NSString stringWithFormat:@"%.0fM", [obj distance]];
