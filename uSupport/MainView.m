@@ -40,10 +40,10 @@
     mainView_SwipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [_mainView addGestureRecognizer:mainView_SwipeRight];
     
-    [self animateButton:_btnAED Animation:@"slideLeft" Delay:0.8 Duration:1 Damping:0.9 Velocity:0.7 Force:1 Hide:NO];
-    [self animateButton:_btnFE Animation:@"slideRight" Delay:0.8 Duration:1 Damping:0.9 Velocity:0.7 Force:1 Hide:NO];
-    [self animateButton:_btnEall Animation:@"zoomIn" Delay:0.6 Duration:1 Damping:0.7 Velocity:0.7 Force:1 Hide:NO];
-    [self animateButton:_btnECall Animation:@"slideUp" Delay:0.6 Duration:1 Damping:0.7 Velocity:0.7 Force:1 Hide:NO];
+    [self animateButton:_btnAED Animation:@"slideLeft" Delay:0.7 Duration:1 Damping:0.9 Velocity:0.7 Force:1 Hide:NO];
+    [self animateButton:_btnFE Animation:@"slideRight" Delay:0.7 Duration:1 Damping:0.9 Velocity:0.7 Force:1 Hide:NO];
+    [self animateButton:_btnEall Animation:@"zoomIn" Delay:0.5 Duration:1 Damping:0.7 Velocity:0.7 Force:1 Hide:NO];
+    [self animateButton:_btnECall Animation:@"slideUp" Delay:0.9 Duration:1 Damping:0.7 Velocity:0.7 Force:1 Hide:NO];
     [self animateImageView:_logo Animation:@"zoomIn" Delay:0.3 Duration:1 Damping:0.7 Velocity:0.7 Force:1 Hide:NO];
 }
 
