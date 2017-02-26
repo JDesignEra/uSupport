@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C85EE3A8F0F97C940CAAC0E6C757EFBED6AE6A3A+++471B942",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++D4D47DE" : 9223372036854775807,
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++62DA77D" : 9223372036854775807,
+    "C85EE3A8F0F97C940CAAC0E6C757EFBED6AE6A3A+++471B942" : 9223372036854775807,
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++549FB29" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "951A39DD-4C54-49E8-BD44-685D34986862",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++D4D47DE" : "uSupport\/uSupport\/",
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++62DA77D" : "",
+    "C85EE3A8F0F97C940CAAC0E6C757EFBED6AE6A3A+++471B942" : "uSupport\/",
+    "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++549FB29" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "uSupport",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "uSupport.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:JDesignEra\/uSupport.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++549FB29"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JDesignEra\/uSupport.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++62DA77D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JDesignEra\/uSupport.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63265AC07B67B5D4CEED268BEA29535BC09F72EE+++D4D47DE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:JDesignEra\/uSupport.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C85EE3A8F0F97C940CAAC0E6C757EFBED6AE6A3A+++471B942"
+    }
+  ]
+}
