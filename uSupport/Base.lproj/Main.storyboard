@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,35 +33,15 @@
                                     <action selector="btnECall_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VsD-8F-6bv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I52-io-fdI" userLabel="btnEall" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                <rect key="frame" x="152" y="218" width="110" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-E_All"/>
-                                <connections>
-                                    <action selector="btnEall_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGS-yU-Sg6"/>
-                                    <segue destination="uM0-ba-cY5" kind="presentation" identifier="allKit-Segue" modalPresentationStyle="overCurrentContext" id="nZh-WD-YMY"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHW-cE-pm9" userLabel="btnAED" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                <rect key="frame" x="252" y="218" width="110" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <state key="normal" image="btn-AED"/>
-                                <connections>
-                                    <action selector="btnAED_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tOK-tg-Id1"/>
-                                    <segue destination="uM0-ba-cY5" kind="presentation" identifier="aedKit-Segue" modalPresentationStyle="overCurrentContext" id="OH3-pJ-6OY"/>
-                                </connections>
-                            </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-jU-IkG" userLabel="btmView" customClass="SpringView" customModule="uSupport" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-jU-IkG" userLabel="btmView" customClass="SpringView" customModule="uSupport" customModuleProvider="target">
                                 <rect key="frame" x="50" y="582" width="314" height="100"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btmPanel" translatesAutoresizingMaskIntoConstraints="NO" id="zYZ-5g-KMW">
-                                        <rect key="frame" x="-2" y="0.0" width="314" height="100"/>
+                                        <rect key="frame" x="-2.5" y="-0.5" width="314" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nij-WL-2Sf" userLabel="btnFF" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                        <rect key="frame" x="14.5" y="15" width="70" height="69.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="btn-FF"/>
                                         <connections>
@@ -67,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxX-eZ-3UR" userLabel="btnPolice" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                        <rect key="frame" x="122" y="15" width="70" height="70"/>
+                                        <rect key="frame" x="122" y="15" width="70" height="69.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="btn-Police"/>
                                         <connections>
@@ -75,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyC-qk-6lG" userLabel="btnAB" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                        <rect key="frame" x="221" y="15" width="70" height="70"/>
+                                        <rect key="frame" x="221" y="15" width="70" height="69.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="btn-AB"/>
                                         <connections>
@@ -84,26 +66,73 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Uc-jU-IkG" secondAttribute="height" multiplier="157:50" id="Kd7-f6-UCP"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-lj-wTb" userLabel="btnFE" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
-                                <rect key="frame" x="52" y="218" width="110" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-FE"/>
-                                <connections>
-                                    <action selector="btnFE_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="toW-9l-Cvg"/>
-                                    <segue destination="uM0-ba-cY5" kind="presentation" identifier="feKit-Segue" modalPresentationStyle="overCurrentContext" id="rzD-yT-Niz"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uSupport" translatesAutoresizingMaskIntoConstraints="NO" id="AQR-lh-lLO" customClass="SpringImageView" customModule="uSupport" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uSupport" translatesAutoresizingMaskIntoConstraints="NO" id="AQR-lh-lLO" customClass="SpringImageView" customModule="uSupport" customModuleProvider="target">
                                 <rect key="frame" x="73" y="54" width="268" height="94"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AQR-lh-lLO" secondAttribute="height" multiplier="134:47" id="JKT-fg-ffX"/>
+                                </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-fz-vJh" userLabel="btnViewContain">
+                                <rect key="frame" x="57" y="233" width="300" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-lj-wTb" userLabel="btnFE" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
+                                        <rect key="frame" x="-5.5" y="0.0" width="110" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <state key="normal" image="btn-FE"/>
+                                        <connections>
+                                            <action selector="btnFE_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="toW-9l-Cvg"/>
+                                            <segue destination="uM0-ba-cY5" kind="presentation" identifier="feKit-Segue" modalPresentationStyle="overCurrentContext" id="rzD-yT-Niz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I52-io-fdI" userLabel="btnEall" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
+                                        <rect key="frame" x="94" y="0.0" width="110" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="btn-E_All"/>
+                                        <connections>
+                                            <action selector="btnEall_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGS-yU-Sg6"/>
+                                            <segue destination="uM0-ba-cY5" kind="presentation" identifier="allKit-Segue" modalPresentationStyle="overCurrentContext" id="nZh-WD-YMY"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHW-cE-pm9" userLabel="btnAED" customClass="SpringButton" customModule="uSupport" customModuleProvider="target">
+                                        <rect key="frame" x="194" y="0.0" width="110" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" image="btn-AED"/>
+                                        <connections>
+                                            <action selector="btnAED_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tOK-tg-Id1"/>
+                                            <segue destination="uM0-ba-cY5" kind="presentation" identifier="aedKit-Segue" modalPresentationStyle="overCurrentContext" id="OH3-pJ-6OY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Ox-fz-vJh" secondAttribute="height" multiplier="2:1" id="j3j-TP-7BJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.74901960784313726" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="AQR-lh-lLO" secondAttribute="trailing" constant="53" id="8Zi-JK-VI2"/>
+                            <constraint firstItem="AQR-lh-lLO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="Dvy-P7-lp8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Uc-jU-IkG" secondAttribute="bottom" constant="54" id="GPg-ln-Wmh"/>
+                            <constraint firstItem="AQR-lh-lLO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JN2-Es-0JN"/>
+                            <constraint firstItem="6Uc-jU-IkG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="V6H-af-zdJ"/>
+                            <constraint firstItem="6Ox-fz-vJh" firstAttribute="top" secondItem="AQR-lh-lLO" secondAttribute="bottom" constant="85" id="aNE-5a-WAD"/>
+                            <constraint firstItem="AQR-lh-lLO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="cKa-Lx-do7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ox-fz-vJh" secondAttribute="trailing" constant="37" id="fJm-L6-pjR"/>
+                            <constraint firstItem="6Ox-fz-vJh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifb-AH-97Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Uc-jU-IkG" secondAttribute="trailing" constant="30" id="ljk-aK-Arb"/>
+                            <constraint firstItem="6Ox-fz-vJh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="vWz-j2-G3I"/>
+                            <constraint firstItem="6Uc-jU-IkG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xyU-Dc-oy2"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="NTI-Bw-6qK" appends="YES" id="a8T-Mu-4Sx"/>
                             <outletCollection property="gestureRecognizers" destination="WsC-8I-yyw" appends="YES" id="KGz-Hy-Jgo"/>
