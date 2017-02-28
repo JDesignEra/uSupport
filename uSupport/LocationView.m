@@ -231,7 +231,7 @@
                 [self.map addAnnotation:annotation];
                 
                 _lblTotalPin.text = @(i + 1).stringValue;
-                _lblTotalPinTxt.text = @"AED & Fire Extingusihers";
+                _lblTotalPinTxt.text = @"AED & Fire Extinguishers";
             }
             break;
             
