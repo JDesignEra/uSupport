@@ -11,31 +11,13 @@
 #import "CustomAnnotation.h"
 
 @interface LocationView () {
-    int uid;
     NSString *type;
     float latitude;
     float longtitude;
     
-    int uidTemp1;
-    NSString *typeTemp1;
-    float latitudeTemp1;
-    float longtitudeTemp1;
-    CLLocationDistance dist1;
-    CLLocation *destLoc1;
-    CLLocation *userLoc1;
-    
-    int uidTemp2;
-    NSString *typeTemp2;
-    float latitudeTemp2;
-    float longtitudeTemp2;
-    CLLocationDistance dist2;
-    CLLocation *destLoc2;
-    CLLocation *userLoc2;
-    
     int selNearAllVal;
-    
-    int segueID; //1 = AED, 2 = Fire Extinguisher, 3 = Both
 }
+
 @end
 
 @implementation LocationView
@@ -158,9 +140,6 @@
             self.arrEkitInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
             
             for (int i = 0; i < [_arrEkitInfo count]; i++) {
-                //Store Database array into indivdual variables
-                uid = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                type = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
                 latitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
                 longtitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
                 
@@ -186,8 +165,6 @@
             
             for (int i = 0; i < [_arrEkitInfo count]; i++) {
                 //Store Database array into indivdual variables
-                uid = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                type = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
                 latitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
                 longtitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
                 
@@ -212,8 +189,6 @@
             self.arrEkitInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
             
             for (int i = 0; i < [_arrEkitInfo count]; i++) {
-                //Store Database array into indivdual variables
-                uid = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
                 type = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
                 latitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
                 longtitude = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
@@ -246,7 +221,7 @@
     
     //segueID 1 = AED, 2 = Fire Extinguisher, 3 = All
     switch (segueID) {
-        case 1:
+        case 1: {
             query = @"SELECT * FROM Ekit WHERE type = 'aed'";
             [self removeAllMapObj];
             
@@ -257,43 +232,23 @@
             
             self.arrEkitInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
             
-            for (int i = 0; i < [_arrEkitInfo count]; i++) {
-                if (i == 0 || (i%2) == 0) {
-                    //Store Database array into indivdual variables
-                    uidTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                    typeTemp1 = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
-                    latitudeTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
-                    longtitudeTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
-                    userLoc1 = [[CLLocation alloc] initWithLatitude:_map.userLocation.coordinate.latitude longitude:_map.userLocation.coordinate.longitude];
-                    destLoc1 = [[CLLocation alloc] initWithLatitude:latitudeTemp1 longitude:longtitudeTemp1];
-                    dist1 = [userLoc1 distanceFromLocation:destLoc1];
-                }
+            CLLocation *userLocation = self.map.userLocation.location;
+            int closest = -1;
+            CLLocationDistance closestDistance = FLT_MAX;
+            for (int i = 0; i < [self.arrEkitInfo count]; i++)
+            {
+                CLLocation *location = [[CLLocation alloc] initWithLatitude:[[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue] longitude:[[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue]];
+                CLLocationDistance distance = [location distanceFromLocation:userLocation];
                 
-                if (i == 1 || (i%3) == 0) {
-                    //Store Database array into indivdual variables
-                    uidTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                    typeTemp2 = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
-                    latitudeTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
-                    longtitudeTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
-                    userLoc2 = [[CLLocation alloc] initWithLatitude:_map.userLocation.coordinate.latitude longitude:_map.userLocation.coordinate.longitude];
-                    destLoc2 = [[CLLocation alloc] initWithLatitude:latitudeTemp2 longitude:longtitudeTemp2];
-                    dist2 = [userLoc2 distanceFromLocation:destLoc2];
-                }
-                
-                if (dist2 < dist1 && dist2 != 0) {
-                    uid = uidTemp2;
-                    type = typeTemp2;
-                    latitude = latitudeTemp2;
-                    longtitude = longtitudeTemp2;
-                }
-                
-                if (uid == 0 || [type length] < 1 || latitude == 0 || longtitude == 0) {
-                    uid = uidTemp1;
-                    type = typeTemp1;
-                    latitude = latitudeTemp1;
-                    longtitude = longtitudeTemp1;
+                if (distance < closestDistance)
+                {
+                    closest = i;
+                    closestDistance = distance;
                 }
             }
+            
+            latitude = [[[_arrEkitInfo objectAtIndex:closest] objectAtIndex:2] floatValue];
+            longtitude = [[[_arrEkitInfo objectAtIndex:closest] objectAtIndex:3] floatValue];
             
             //Set Custom Annotation
             annotation = [[CustomAnnotation alloc] initWithLocation:CLLocationCoordinate2DMake(latitude, longtitude)];
@@ -301,10 +256,10 @@
             [self.map addAnnotation:annotation];
             
             [self drawRoute];
-            [self resetTempVal];
-            break;
+        }
+        break;
             
-        case 2:
+        case 2: {
             query = @"SELECT * FROM Ekit WHERE type = 'fe'";
             [self removeAllMapObj];
             
@@ -315,43 +270,23 @@
             
             self.arrEkitInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
             
-            for (int i = 0; i < [_arrEkitInfo count]; i++) {
-                if (i == 0 || (i%2) == 0) {
-                    //Store Database array into indivdual variables
-                    uidTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                    typeTemp1 = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
-                    latitudeTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
-                    longtitudeTemp1 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
-                    userLoc1 = [[CLLocation alloc] initWithLatitude:_map.userLocation.coordinate.latitude longitude:_map.userLocation.coordinate.longitude];
-                    destLoc1 = [[CLLocation alloc] initWithLatitude:latitudeTemp1 longitude:longtitudeTemp1];
-                    dist1 = [userLoc1 distanceFromLocation:destLoc1];
-                }
+            CLLocation *userLocation = self.map.userLocation.location;
+            int closest = -1;
+            CLLocationDistance closestDistance = FLT_MAX;
+            for (int i = 0; i < [self.arrEkitInfo count]; i++)
+            {
+                CLLocation *location = [[CLLocation alloc] initWithLatitude:[[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue] longitude:[[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue]];
+                CLLocationDistance distance = [location distanceFromLocation:userLocation];
                 
-                if (i == 1 || (i%3) == 0) {
-                    //Store Database array into indivdual variables
-                    uidTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:0] intValue];
-                    typeTemp2 = [[_arrEkitInfo objectAtIndex:i] objectAtIndex:1];
-                    latitudeTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:2] floatValue];
-                    longtitudeTemp2 = [[[_arrEkitInfo objectAtIndex:i] objectAtIndex:3] floatValue];
-                    userLoc2 = [[CLLocation alloc] initWithLatitude:_map.userLocation.coordinate.latitude longitude:_map.userLocation.coordinate.longitude];
-                    destLoc2 = [[CLLocation alloc] initWithLatitude:latitudeTemp2 longitude:longtitudeTemp2];
-                    dist2 = [userLoc2 distanceFromLocation:destLoc2];
-                }
-                
-                if (dist2 < dist1 && dist2 != 0) {
-                    uid = uidTemp2;
-                    type = typeTemp2;
-                    latitude = latitudeTemp2;
-                    longtitude = longtitudeTemp2;
-                }
-                
-                if (uid == 0 || [type length] < 1 || latitude == 0 || longtitude == 0) {
-                    uid = uidTemp1;
-                    type = typeTemp1;
-                    latitude = latitudeTemp1;
-                    longtitude = longtitudeTemp1;
+                if (distance < closestDistance)
+                {
+                    closest = i;
+                    closestDistance = distance;
                 }
             }
+            
+            latitude = [[[_arrEkitInfo objectAtIndex:closest] objectAtIndex:2] floatValue];
+            longtitude = [[[_arrEkitInfo objectAtIndex:closest] objectAtIndex:3] floatValue];
             
             //Set Custom Annotation
             annotation = [[CustomAnnotation alloc] initWithLocation:CLLocationCoordinate2DMake(latitude, longtitude)];
@@ -359,8 +294,8 @@
             [self.map addAnnotation:annotation];
             
             [self drawRoute];
-            [self resetTempVal];
-            break;
+        }
+        break;
             
         case 3:
             [self allObj];
@@ -443,34 +378,6 @@
     annView.centerOffset = CGPointMake(0, (-32 / 2));
     
     return annView;
-}
-
-- (void)resetTempVal {
-    //Reset temp values when done
-    if (uidTemp1 != 0 || [typeTemp1 length] > 1 || latitudeTemp1 != 0 || longtitudeTemp1 != 0 || userLoc1 != 0 || destLoc1 != 0 || dist1 != 0 || uidTemp2 != 0 || [typeTemp2 length] > 1 || latitudeTemp2 != 0 || longtitudeTemp2 != 0 || userLoc2 != 0 || destLoc2 != 0 || dist2 != 0) {
-        uidTemp1 = 0;
-        typeTemp1 = NULL;
-        latitudeTemp1 = 0;
-        longtitudeTemp1 = 0;
-        destLoc1 = 0;
-        userLoc1 = 0;
-        dist1 = 0;
-        
-        uidTemp2 = 0;
-        typeTemp2 = NULL;
-        latitudeTemp2 = 0;
-        longtitudeTemp2 = 0;
-        destLoc2 = 0;
-        userLoc2 = 0;
-        dist2 = 0;
-    }
-    
-    if (uid != 0 || [type length] > 1 || latitude != 0 || longtitude != 0) {
-        uid = 0;
-        type = NULL;
-        latitude = 0;
-        longtitude = 0;
-    }
 }
 
 - (void)removeAllMapObj {
