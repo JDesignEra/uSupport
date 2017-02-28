@@ -362,7 +362,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ShI-JP-VOO" firstAttribute="top" secondItem="Hhp-3P-UyT" secondAttribute="bottom" constant="45" id="5it-Z6-dsg"/>
                             <constraint firstAttribute="trailing" secondItem="Hhp-3P-UyT" secondAttribute="trailing" constant="25" id="LRF-2G-IYv"/>
                             <constraint firstItem="Hhp-3P-UyT" firstAttribute="centerX" secondItem="lWd-vn-YCi" secondAttribute="centerX" id="MqU-jq-2Qu"/>
                             <constraint firstItem="Hhp-3P-UyT" firstAttribute="leading" secondItem="lWd-vn-YCi" secondAttribute="leading" constant="25" id="Xl8-Dz-ULC"/>
