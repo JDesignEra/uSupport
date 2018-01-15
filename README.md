@@ -1,5 +1,4 @@
 # uSupport
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/JDesignEra/uSupport/blob/master/LICENSE)
 [![GitHub Release Date](https://img.shields.io/github/release-date/JDesignEra/uSupport.svg)](https://github.com/JDesignEra/uSupport)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/JDesignEra/uSupport.svg)](https://github.com/JDesignEra/uSupport)
 [![GitHub language count](https://img.shields.io/github/languages/count/JDesignEra/uSupport.svg)](https://github.com/JDesignEra/uSupport)
